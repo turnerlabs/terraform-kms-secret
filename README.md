@@ -4,7 +4,7 @@ Creates a standalone secretsmanager secret, encrypted with a kms key.
 
 ```hcl
 module "your_secret"{
-  source = "github.com/turnerlabs/terraform-kms-secret"
+  source = "github.com/turnerlabs/terraform-kms-secret?ref=v1.0"
   region = var.region
   secret_id = "your-secret-id"
   secrets_saml_users = ["peoplein@org.com", "yourcompany@org.com"]
