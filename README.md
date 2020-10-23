@@ -8,7 +8,7 @@ module "your_secret"{
   region = var.region
   secret_id = "your-secret-id"
   secrets_saml_users = ["peoplein@org.com", "yourcompany@org.com"]
-  saml_role = var.saml_role # the role you use to create this
+  saml_role = var.saml_role
   tags = var.tags
   additional_roles = [
     data.aws_iam_role.ecsTaskExecutionRole.name
