@@ -309,3 +309,14 @@ variable "tags" {}
 variable "saml_role" {}
 
 data "aws_caller_identity" "current" {}
+
+output "key_arn" {
+  value = aws_kms_key.sm_kms_key.arn
+}
+
+output "secret_arn" {
+  value = aws_secretsmanager_secret.sm_secret.arn
+}
+
+resource "aws_kms_key" "sm_kms_key" {
+}
