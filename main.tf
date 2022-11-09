@@ -320,4 +320,5 @@ output "key_arn" {
 
 output "key_policy" {
   value = data.aws_iam_policy_document.kms_resource_policy_doc.json
+  sensitive = true
 }
