@@ -310,10 +310,14 @@ variable "saml_role" {}
 
 data "aws_caller_identity" "current" {}
 
+output "secret_arn" {
+  value = aws_secretsmanager_secret.sm_secret.arn
+}
+
 output "key_arn" {
   value = aws_kms_key.sm_kms_key.arn
 }
 
-output "secret_arn" {
-  value = aws_secretsmanager_secret.sm_secret.arn
+output "key_policy" {
+  value = data.aws_iam_policy_document.kms_resource_policy_doc.json
 }
