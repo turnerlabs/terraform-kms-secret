@@ -317,6 +317,3 @@ output "key_arn" {
 output "secret_arn" {
   value = aws_secretsmanager_secret.sm_secret.arn
 }
-
-resource "aws_kms_key" "sm_kms_key" {
-}
