@@ -29,6 +29,7 @@ locals {
     "kms:PutKeyPolicy",
     "kms:ReEncryptFrom",
     "kms:ReEncryptTo",
+    "kms:ReplicateKey",
     "kms:RetireGrant",
     "kms:RevokeGrant",
     "kms:ScheduleKeyDeletion",
