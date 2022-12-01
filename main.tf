@@ -29,6 +29,7 @@ locals {
     "kms:PutKeyPolicy",
     "kms:ReEncryptFrom",
     "kms:ReEncryptTo",
+    "kms:ReplicateKey",
     "kms:RetireGrant",
     "kms:RevokeGrant",
     "kms:ScheduleKeyDeletion",
@@ -110,6 +111,7 @@ resource "aws_kms_key" "sm_kms_key" {
       "Name" = format("%s", var.secret_id)
     },
   )
+  multi_region = var.multi_region
 }
 
 # alias for the key
@@ -301,6 +303,12 @@ variable "secrets_saml_users" {
 }
 
 variable "region" {}
+
+variable "multi_region" {
+  description = "if true, KMS key is created as multi-region"
+  type = bool
+  default = false
+}
 
 variable "secret_id" {}
 
